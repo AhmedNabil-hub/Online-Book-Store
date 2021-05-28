@@ -77,9 +77,11 @@ body {
 }
 
 .text-color1 {
-    color: white;
+    color: #0c3330;
     text-decoration-line: none;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .text-color2 {
@@ -135,7 +137,8 @@ body {
 .discription-style1 {
     width: 100vw;
     height: 50vh;
-    background-color: #3baf9f;
+    background-image: linear-gradient(to left, transparent, #50b8a9), url(../images/main/bb.jpg);
+    background-size: cover;
 }
 
 .discription-style2 {
