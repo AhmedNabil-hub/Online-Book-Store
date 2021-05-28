@@ -121,7 +121,7 @@
               </div>
             </div>
             <div class="form-inline align-items-center">
-              <label class="mr-5" for="ExampleLanguage">Language &nbsp; </label>
+              <label class="col-sm-2 col-form-label" for="ExampleLanguage">Language &nbsp; </label>
               <select class="custom-select my-1 mr-auto" id="ExampleLanguage" name="author_language" required>
                 <option selected>Choose</option>
                 <option value="arabic">Arabic</option>
