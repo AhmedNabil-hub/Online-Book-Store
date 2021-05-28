@@ -24,7 +24,7 @@
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-home"></i>
       </div>
-      <div class="sidebar-brand-text mx-3">APP Name</div>
+      <div class="sidebar-brand-text mx-3">Book Store</div>
     </a>
 
     <!-- Divider -->
