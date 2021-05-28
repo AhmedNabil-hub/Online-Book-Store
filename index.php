@@ -49,7 +49,7 @@
         <p style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 500;font-size: 40px;">E-Book
           Library</p>
       </div>
-      <div style="font-size: 30px; font-weight: 200; color:white ;">
+      <div style="font-size: 30px; font-weight: 200; color:black ;">
         <p style="margin-top: 10px;"> An electronic library open for books</p>
       </div>
     </div>
@@ -156,8 +156,7 @@
         echo "<div class='a-box book-style1'>";
         echo "<div>";
         echo "<a href='#book1'>";
-        echo "<img src='" . $book["book_cover"] . "' width='140vw' 'height='200'
-        alt='#book1'>";
+        echo "<img src='" . $book["book_cover"] . "' width='140vw' 'height='200' object-fit='contain' alt='#book1'>";
         echo "</a>";
         echo "<p>";
         echo "<div>";
