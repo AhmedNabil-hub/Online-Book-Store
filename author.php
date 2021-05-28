@@ -4,47 +4,53 @@ session_start();
 
   include './init.php';
 
-  if(isset($_GET["category"])){
-    $get_category = $_GET["category"];
-    $books = get_data(
-      "books",
-      "book_id",
-      "category=$get_category",
-      "WHERE category=:category"
-    );
+  // if(isset($_GET["category"])){
+  //   $get_category = $_GET["category"];
+  //   $books = get_data(
+  //     "books",
+  //     "book_id",
+  //     "category=$get_category",
+  //     "WHERE category=:category"
+  //   );
 
-    $books_id = array();
-    foreach($books as $book){
-      $books_id[] = $book['book_id'];
-    }
+  //   $books_id = array();
+  //   foreach($books as $book){
+  //     $books_id[] = $book['book_id'];
+  //   }
 
-    $books_id = implode(",", $books_id);
+  //   $books_id = implode(",", $books_id);
 
-    $authors = get_data(
-      "book_auth",
-      "author_id",
-      "book_id=$books_id",
-      "WHERE book_id IN (:book_id)"
-    );
-    $authors_id = array();
-    foreach($authors as $author){
-      $authors_id[] = $author['author_id'];
-    }
-    $authors_id = implode(",", $authors_id);
-    $authors = get_data(
-      "authors",
-      "author_id,author_name,author_photo",
-      "author_id=$authors_id",
-      "WHERE author_id IN (:author_id)"
-    );
+  //   $authors = get_data(
+  //     "book_auth",
+  //     "author_id",
+  //     "book_id=$books_id",
+  //     "WHERE book_id IN (:book_id)"
+  //   );
 
-  }
-  else {
-    $authors = get_data(
-      "authors",
-      "author_id,author_name,author_photo",
-    );
-  }
+  //   $authors_id = array();
+  //   foreach($authors as $author){
+  //     $authors_id[] = $author['author_id'];
+  //   }
+  //   $authors_id = implode(",", $authors_id);
+  //   $authors = get_data(
+  //     "authors",
+  //     "author_id,author_name,author_photo",
+  //     "author_id=$authors_id",
+  //     "WHERE author_id IN (:author_id)"
+  //   );
+
+  // }
+  // else {
+  //   $authors = get_data(
+  //     "authors",
+  //     "author_id,author_name,author_photo",
+  //   );
+  // }
+
+  $authors = get_data(
+    "authors",
+    "author_id,author_name,author_photo",
+  );
 
   $categories = get_data(
     "books",
@@ -130,7 +136,7 @@ session_start();
 
     foreach($categories as $category){
       echo "<div>";
-        echo "<a class='text-color' href='?category=". $category["category"] ."'>";
+        echo "<a class='text-color' href='book_categories.php?category=". $category["category"] ."'>";
           echo "<p>". $category["category"] ."</p>";
         echo "</a>";
       echo "</div>";
