@@ -124,15 +124,48 @@
               <label class="mr-5" for="ExampleLanguage">Language &nbsp; </label>
               <select class="custom-select my-1 mr-auto" id="ExampleLanguage" name="author_language" required>
                 <option selected>Choose</option>
-                <option value="arabic">عربي</option>
+                <option value="arabic">Arabic</option>
+                <option value="chinese">Chinese (Mandarin)</option>
+                <option value="dutch">Dutch</option>
                 <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="greek">Greek</option>
+                <option value="hindi">Hindi</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="korean">Korean</option>
+                <option value="portuguese">Portuguese</option>
+                <option value="russian">Russian</option>
+                <option value="spanish">Spanish</option>
+                <option value="swahili">Swahili</option>
+                <option value="swedish">Swedish </option>
+                <option value="turkish">Turkish</option>
               </select>
               <label class=" mr-5" for="ExampleCountry">Country</label>
               <select class="custom-select my-1 mr-auto" id="ExampleCountry" name="author_country" required>
                 <option selected>Choose</option>
-                <option value="فلسطين">فلسطين</option>
-                <option value="مصر">مصر</option>
-                <option value="england">England</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="China">China</option>
+                <option value="Egypt">Egypt</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Greece">Greece</option>
+                <option value="India">India</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="Jordan">Jordan</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Poland">Poland</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Russian Federation">Russian Federation</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="Spain">Spain</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Turkey">Turkey</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
               </select>
             </div>
             <div class="form-group row">
