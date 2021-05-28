@@ -6,11 +6,11 @@ function check_errors($name, $type, $tmp_name, $error, $size, $formErrors){
     @$file_ext = strtolower(end(explode('.', $name)));
 
     if (!in_array($file_ext, allowed_exts)){
-      $errors[] = '<div>this photo extension in not allowed</div>';
+      $errors[] = 'this photo extension in not allowed';
     }
 
     if ($size > max_size){
-      $errors[] = '<div>Photo can\'t be more than '.max_size.'</div>';
+      $errors[] = 'Photo can\'t be more than '.max_size;
     }
 
     if (empty($errors) && empty($formErrors)){
@@ -21,7 +21,7 @@ function check_errors($name, $type, $tmp_name, $error, $size, $formErrors){
     } 
 
   } else {
-    $errors[] = '<div>Please upload a file</div>';
+    $errors[] = 'Please upload a file';
   }
 
   return $errors;
