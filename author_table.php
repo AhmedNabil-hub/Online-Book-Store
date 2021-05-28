@@ -16,12 +16,15 @@
       "WHERE author_id=:author_id"
     ));
 
-    if ($count_books > 0){
+    if ($count_books < 1){
       delete_data(
         "authors",
         "author_id=$id",
         "WHERE author_id=:author_id"
       );
+    }
+    else {
+      echo "<script>alert('Deleting authors that have books is not allowed. Please delete their books first!')</script>";
     }
     
     redirect("dashboard.php?dashpage=author_table");
