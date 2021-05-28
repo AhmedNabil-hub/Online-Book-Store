@@ -45,8 +45,8 @@
       $formErrors[] = "please type a valid title";
     }
 
-    if (empty($author_name) || strlen($author_name) < 3) {
-      $formErrors[] = "please type a valid author name";
+    if (empty($author_name) || $author_name == "Choose") {
+      $formErrors[] = "please choose a category";
     }
 
     if (empty($category) || $category == "Choose") {
@@ -127,7 +127,7 @@
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Books</h1>s</h1>
+    <h1 class="h3 mb-0 text-gray-800">Books</h1>
   </div>
 
   <!-- Content Row -->
@@ -140,8 +140,7 @@
           Add a New Book
         </div>
         <div class="card-body">
-          <form action="?dashpage=book_form" method="POST"
-            enctype="multipart/form-data">
+          <form action="?dashpage=book_form" method="POST" enctype="multipart/form-data">
             <div class="form-group row">
               <label for="ExampleBookTitle" class="col-sm-2 col-form-label">Book Title</label>
               <div class="col-sm-10">
@@ -152,24 +151,66 @@
             <div class="form-group row">
               <label for="ExampleAuthorName" class="col-sm-2 col-form-label">Author Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="ExampleAuthorName" placeholder="Author Name"
-                  name="author_name" required>
+                <select class="custom-select my-1 mr-auto" id="ExampleLanguage" name="author_name" required>
+                <option selected>Choose</option>
+                <?php 
+                  $authors = get_data(
+                    "authors",
+                    "DISTINCT author_name",
+                    null,
+                    null,
+                    null,
+                    "ORDER BY author_name ASC"
+                  );
+
+                  foreach($authors as $author){
+                    echo "<option value='". $author['author_name'] ."'>". ucfirst($author['author_name']) ."</option>";
+                  }
+                ?>
+              </select>
               </div>
             </div>
             <div class="form-inline align-items-center">
               <label class="mr-auto" for="ExampleLanguage">Language &nbsp; </label>
               <select class="custom-select my-1 mr-auto" id="ExampleLanguage" name="book_language" required>
                 <option selected>Choose</option>
-                <option value="arabic">عربي</option>
+                <option value="arabic">Arabic</option>
+                <option value="chinese">Chinese (Mandarin)</option>
+                <option value="dutch">Dutch</option>
                 <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="greek">Greek</option>
+                <option value="hindi">Hindi</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="korean">Korean</option>
+                <option value="portuguese">Portuguese</option>
+                <option value="russian">Russian</option>
+                <option value="spanish">Spanish</option>
+                <option value="swahili">Swahili</option>
+                <option value="swedish">Swedish </option>
+                <option value="turkish">Turkish</option>
               </select>
               <label class=" mr-5" for="inlineFormCustomSelectPref">Book Category</label>
               <select class="custom-select my-1 mr-auto" id="inlineFormCustomSelectPref" name="category" required>
                 <option selected>Choose</option>
-                <option value="one">One</option>
-                <option value="two">Two</option>
-                <option value="three">Three</option>
+                <?php 
+                  $categories = get_data(
+                    "books",
+                    "DISTINCT category",
+                    null,
+                    null,
+                    null,
+                    "ORDER BY category ASC"
+                  );
+
+                  foreach($categories as $category){
+                    echo "<option value='". strtolower($category['category']) ."'>". ucfirst($category['category']) ."</option>";
+                  }
+                ?>
               </select>
+
               <label for="PublicationDate" class="col-sm-2 col-form-label">Publication Date</label>
               <input type="date" class="form-control" id="PublicationDate" name="published_at" required>
             </div>
