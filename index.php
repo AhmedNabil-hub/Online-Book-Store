@@ -125,7 +125,7 @@
 
     foreach($categories as $category){
       echo "<div>";
-        echo "<a class='text-color' href='?category=". $category["category"] ."'>";
+        echo "<a class='text-color' href='book_categories.php?category=". $category["category"] ."'>";
           echo "<p>". $category["category"] ."</p>";
         echo "</a>";
       echo "</div>";
