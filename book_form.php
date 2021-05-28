@@ -171,7 +171,7 @@
               </div>
             </div>
             <div class="form-inline align-items-center">
-              <label class="mr-auto" for="ExampleLanguage">Language &nbsp; </label>
+              <label class="col-sm-2 col-form-label" for="ExampleLanguage">Language &nbsp; </label>
               <select class="custom-select my-1 mr-auto" id="ExampleLanguage" name="book_language" required>
                 <option selected>Choose</option>
                 <option value="arabic">Arabic</option>
@@ -192,7 +192,7 @@
                 <option value="swedish">Swedish </option>
                 <option value="turkish">Turkish</option>
               </select>
-              <label class=" mr-5" for="inlineFormCustomSelectPref">Book Category</label>
+              <label class="col-sm-2 col-form-label" for="inlineFormCustomSelectPref">Book Category</label>
               <select class="custom-select my-1 mr-auto" id="inlineFormCustomSelectPref" name="category" required>
                 <option selected>Choose</option>
                 <?php 
@@ -212,7 +212,7 @@
               </select>
 
               <label for="PublicationDate" class="col-sm-2 col-form-label">Publication Date</label>
-              <input type="date" class="form-control" id="PublicationDate" name="published_at" required>
+              <input type="date" class="custom-select" id="PublicationDate" name="published_at" required>
             </div>
             <div class="form-group row">
               <label for="ExampleBookDescription" class="col-sm-2 col-form-label">Book Description</label>
